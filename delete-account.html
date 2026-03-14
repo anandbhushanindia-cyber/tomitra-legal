@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToMitra — Delete Your Account</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --indigo: #4F46E5;
+      --indigo-light: #818CF8;
+      --bg: #0F0F23;
+      --surface: #1A1A30;
+      --border: rgba(255,255,255,0.08);
+      --text1: #F3F4F6;
+      --text2: #9CA3AF;
+      --text3: #6B7280;
+      --red: #EF4444;
+      --red-bg: rgba(239,68,68,0.1);
+      --red-border: rgba(239,68,68,0.25);
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text1);
+      line-height: 1.7;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 40px;
+    }
+    .logo { display: flex; align-items: baseline; gap: 2px; }
+    .logo .to    { font-size: 16px; font-weight: 600; color: var(--indigo-light); }
+    .logo .mitra { font-size: 32px; font-weight: 800; color: var(--indigo); letter-spacing: -1px; }
+    header p { color: var(--text3); font-size: 14px; margin-top: 2px; }
+
+    main { max-width: 680px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    h1 { font-size: 32px; font-weight: 800; color: var(--text1); margin-bottom: 8px; }
+    .meta { color: var(--text3); font-size: 14px; margin-bottom: 40px; }
+
+    .warning {
+      background: var(--red-bg);
+      border: 1px solid var(--red-border);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .warning-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .warning p { color: #FCA5A5; font-size: 15px; margin: 0; }
+    .warning strong { color: var(--red); }
+
+    h2 {
+      font-size: 18px; font-weight: 700; color: var(--text1);
+      margin: 36px 0 14px;
+      padding-left: 12px;
+      border-left: 3px solid var(--indigo);
+    }
+    p { color: var(--text2); font-size: 15px; margin-bottom: 14px; }
+
+    .steps { list-style: none; padding: 0; margin: 0 0 14px; }
+    .steps li {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 10px;
+    }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(79,70,229,0.2);
+      color: var(--indigo-light);
+      font-weight: 700; font-size: 15px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-body { flex: 1; }
+    .step-body strong { color: var(--text1); display: block; margin-bottom: 2px; font-size: 15px; }
+    .step-body span { color: var(--text2); font-size: 14px; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 26px;
+      margin: 14px 0;
+    }
+    .card strong { color: var(--text1); }
+
+    table {
+      width: 100%; border-collapse: collapse;
+      margin: 14px 0; font-size: 14px;
+    }
+    th {
+      background: rgba(79,70,229,0.12); color: var(--indigo-light);
+      padding: 10px 16px; text-align: left;
+      font-weight: 600; border: 1px solid var(--border);
+    }
+    td { padding: 10px 16px; border: 1px solid var(--border); color: var(--text2); }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    .deleted { color: #86EFAC; }
+    .kept    { color: #FCA5A5; }
+
+    .email-btn {
+      display: inline-block;
+      background: var(--indigo);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      margin-top: 8px;
+    }
+    .email-btn:hover { background: #6366F1; }
+
+    a { color: var(--indigo-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--text3);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo"><span class="to">to</span><span class="mitra">Mitra</span></div>
+    <p>AI-powered news for India · com.tomitra.app</p>
+  </div>
+</header>
+
+<main>
+  <h1>Delete Your Account</h1>
+  <p class="meta">ToMitra · Account &amp; Data Deletion Request</p>
+
+  <div class="warning">
+    <div class="warning-icon">⚠️</div>
+    <p><strong>This action is permanent.</strong> Deleting your account will erase all your personal data, reading history, bookmarks, and preferences. This cannot be undone.</p>
+  </div>
+
+  <h2>How to Delete Your Account</h2>
+  <p>You can request account deletion in two ways:</p>
+
+  <h2 style="border-color:#E11D48; margin-top:24px;">Option A — From inside the app</h2>
+  <ol class="steps">
+    <li><div class="step-num">1</div><div class="step-body"><strong>Open ToMitra</strong><span>Launch the app on your device</span></div></li>
+    <li><div class="step-num">2</div><div class="step-body"><strong>Go to Profile tab</strong><span>Tap the Profile icon in the bottom navigation bar</span></div></li>
+    <li><div class="step-num">3</div><div class="step-body"><strong>Open Settings</strong><span>Tap the ⚙️ settings icon in the top-right corner</span></div></li>
+    <li><div class="step-num">4</div><div class="step-body"><strong>Tap "Delete Account"</strong><span>Scroll to the bottom of Settings and tap Delete Account</span></div></li>
+    <li><div class="step-num">5</div><div class="step-body"><strong>Confirm deletion</strong><span>Enter your password or confirm via the prompt. Your account and all data will be permanently deleted within 30 days.</span></div></li>
+  </ol>
+
+  <h2 style="border-color:#6B7280; margin-top:32px;">Option B — Email request</h2>
+  <p>If you cannot access the app, email us directly and we will delete your account within <strong>7 business days</strong>:</p>
+
+  <div class="card">
+    <p style="margin:0;">
+      <strong>Email:</strong> <a href="mailto:privacy@tomitra.app">privacy@tomitra.app</a><br/>
+      <strong>Subject:</strong> Account Deletion Request<br/>
+      <strong>Include:</strong> The email address linked to your ToMitra account
+    </p>
+  </div>
+
+  <a class="email-btn" href="mailto:privacy@tomitra.app?subject=Account%20Deletion%20Request&body=Hi%2C%0A%0AI%20would%20like%20to%20permanently%20delete%20my%20ToMitra%20account.%0A%0AEmail%20linked%20to%20my%20account%3A%20%5Byour%20email%20here%5D%0A%0AThank%20you.">
+    📧 Send Deletion Request Email
+  </a>
+
+  <h2>What Gets Deleted vs. Kept</h2>
+  <table>
+    <tr><th>Data</th><th>On Account Deletion</th><th>Retention Period</th></tr>
+    <tr><td>Email address &amp; password</td><td class="deleted">✓ Permanently deleted</td><td>Within 30 days</td></tr>
+    <tr><td>Display name &amp; profile photo</td><td class="deleted">✓ Permanently deleted</td><td>Within 30 days</td></tr>
+    <tr><td>Reading history &amp; bookmarks</td><td class="deleted">✓ Permanently deleted</td><td>Within 30 days</td></tr>
+    <tr><td>News preferences &amp; mood settings</td><td class="deleted">✓ Permanently deleted</td><td>Within 30 days</td></tr>
+    <tr><td>Location data</td><td class="deleted">✓ Permanently deleted</td><td>Within 30 days</td></tr>
+    <tr><td>Push notification token</td><td class="deleted">✓ Permanently deleted</td><td>Immediately</td></tr>
+    <tr><td>Comments on articles</td><td class="deleted">✓ Permanently deleted</td><td>Within 30 days</td></tr>
+    <tr><td>Anonymised usage analytics</td><td class="kept">Retained (no personal identifiers)</td><td>Indefinitely</td></tr>
+  </table>
+
+  <p>All personal data is deleted within <strong>30 days</strong> of your request. Anonymised, aggregated statistics (e.g. total article reads) contain no personal identifiers and may be retained for product improvement.</p>
+
+  <h2>Questions?</h2>
+  <div class="card">
+    <p style="margin:0;">
+      Contact our privacy team at <a href="mailto:privacy@tomitra.app">privacy@tomitra.app</a><br/>
+      We respond within 2 business days.
+    </p>
+  </div>
+</main>
+
+<footer>
+  © 2026 ToMitra · <a href="./index.html">Privacy Policy</a> · <a href="mailto:privacy@tomitra.app">privacy@tomitra.app</a>
+</footer>
+
+</body>
+</html>
